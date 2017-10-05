@@ -34,7 +34,8 @@ GetCleanData <- function(pathToDataFolder = ""){
     testLabels<-read.csv(testLabelsFile, header = FALSE)
     trainLabels<-read.csv(trainLabelsFile, header = FALSE)
     
-    # We calculate the number of columns, because we need this value to read the data files
+    # We calculate the number of columns of the 2 massive data files X_test.txt and X_train.txt,
+    # because we need this value to read them
     numberOfColumns = nrow(columnNames)
     
     # The format of these files is fixed width, with a constant width of 16 characters for
@@ -64,7 +65,7 @@ GetCleanData <- function(pathToDataFolder = ""){
     # We now merge the rows from those 2 data frames
     fullData <- rbind(fullTestData, fullTrainData)
     
-    # We now extract extract the columns that we are interested:
+    # We now extract extract the columns that we are interested in:
     # the activity and subject columns, and all the mean and standard deviation ones
     fullData[,grepl("mean|std|activity|subject", colnames(fullData))]
     
@@ -77,6 +78,6 @@ GetAveragedCleanedData <- function(pathToDataFolder = ""){
     selectedData <- GetCleanData(pathToDataFolder)
     
     # Extract averaged data per activity and subject
-    averagedSelectedData<- selectedData %>% group_by(activity,subject) %>% summarise_all(funs(mean(., na.rm=TRUE)))
+    selectedData %>% group_by(activity,subject) %>% summarise_all(funs(mean(., na.rm=TRUE)))
     
 }
