@@ -12,4 +12,4 @@ If you were to run the functions manually, you woul run them like this.
 
 where pathToFolder is the path to the folder where the raw data was extracted.
 
-The script at the end executes the 2 functions automatically, assuming the data files are in the current directory, as it is indicated in the assignment submission instructions
+The script at the end executes the second function automatically, assuming the data files are in the current directory, as it is indicated in the assignment submission instructions
