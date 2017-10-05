@@ -78,6 +78,9 @@ GetAveragedCleanedData <- function(pathToDataFolder = ""){
     selectedData <- GetCleanData(pathToDataFolder)
     
     # Extract averaged data per activity and subject
-    selectedData %>% group_by(activity,subject) %>% summarise_all(funs(mean(., na.rm=TRUE)))
+    selectedData %>% 
+        group_by(activity,subject) %>% 
+        summarise_all(funs(mean(., na.rm=TRUE))) %>% 
+        arrange(activity, subject)
     
 }
