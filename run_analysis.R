@@ -85,6 +85,6 @@ GetAveragedCleanedData <- function(pathToDataFolder = getwd()){
     
 }
 
-# Now we execute the 2 functions, asuming the extracted files are in the working directory
-dataset1<-GetCleanData()
-dataset2<-GetAveragedCleanedData()
+# Now we execute the second function, asuming the extracted files are in the working directory
+
+dataset<-GetAveragedCleanedData()
