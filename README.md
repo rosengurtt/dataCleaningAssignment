@@ -8,6 +8,6 @@ To run the script, extract the raw data files to a local folder and then run the
 
 **dataset1 <- GetCleanData(pathToFolder)**
 
-**ataset2 <- GetAveragedCleanedData(pathToFolder)**
+**dataset2 <- GetAveragedCleanedData(pathToFolder)**
 
 where pathToFolder is the path to the folder where the raw data was extracted 
