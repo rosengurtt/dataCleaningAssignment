@@ -9,7 +9,7 @@
 
 ## GetCleanData creates the first dataset requested in the assignment
 
-GetCleanData <- function(pathToDataFolder = ""){
+GetCleanData <- function(pathToDataFolder = getwd()){
     
     # We use the dplyr package
     library(dplyr)
@@ -72,7 +72,7 @@ GetCleanData <- function(pathToDataFolder = ""){
 }
 
 ## GetAveragedCleanedData creates the second data set requested in the assingnment
-GetAveragedCleanedData <- function(pathToDataFolder = ""){
+GetAveragedCleanedData <- function(pathToDataFolder = getwd()){
     
     # Get the full data first
     selectedData <- GetCleanData(pathToDataFolder)
@@ -84,3 +84,7 @@ GetAveragedCleanedData <- function(pathToDataFolder = ""){
         arrange(activity, subject)
     
 }
+
+# Now we execute the 2 functions, asuming the extracted files are in the working directory
+dataset1<-GetCleanData()
+dataset2<-GetAveragedCleanedData()
